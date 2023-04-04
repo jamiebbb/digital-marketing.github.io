@@ -1,0 +1,267 @@
+/* General page content such as colour, max width and text to explain sections in my portfolio */
+body {
+    background-color: #00ABFF;
+    max-width: 90%;
+    margin: auto;
+}
+
+.bodyText {
+  color: white;
+  margin-bottom: -22px;
+  margin-top: 50px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 21px;
+  font-weight: lighter;
+  text-align: center;
+}
+
+.pagecontainer {
+    display: grid;
+}
+
+
+/* --------------------------------------- HEADER CONTENT --------------------------------------*/
+/* Data Science Title */
+h1 {
+    color: rgb(190, 0, 0); /*Dark red*/
+    font-size: 40px;
+    margin-top: 20px;
+    font-weight: bold;
+    text-align: left;
+}
+
+/* Name */
+h2 {
+    color: white;
+    font-weight: lighter;
+    font-size: 25px;
+    margin-top: -35px;
+}
+
+/* Project write up text */
+h3 {
+    color: #cf4646;
+    font-weight: lighter;
+    font-size: 20px;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-family: 'Poppins', sans-serif;
+    text-align: center;
+    text-shadow: 0 0 #3fff00;
+}
+
+/* Project title with rainbox border */
+h4 {
+    color: #F7931A; /*Bitcoin colour*/
+    font-size: 45px;
+    margin-top: 40px;
+    margin-bottom: 40px;
+    font-weight: bold;
+    text-align: center;
+    animation: border-pulsate 2s infinite;
+    border-color: orange;
+    border-radius: 10px;
+    border-style: groove;
+    border-width: 8px;
+}    
+
+p {
+    color: #9101D8;
+    font-size: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-weight: lighter;
+    margin-top: -7px;
+    margin-bottom: 7px;
+}
+
+/* Container for the DataScience header */
+.hcontainer {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+    border: 4px solid white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+}
+
+header {
+    font-family: 'Poppins', sans-serif;
+}
+/* --------------------------------------- END HEADER CONTENT --------------------------------------*/
+
+/* ------------------------------ BODY CONTENT -------------------------------- */
+/* Flex-flow, flex-grow and gridd stuff inspired from w3schools.com and their various templates/examples */
+
+/* Container for all portfolioo work  */
+.bcontainer {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 30px 30px;
+  margin-top: 30px;
+  border-style: solid;
+  border-color: white;
+  padding: 20px;
+  border-radius: 25px;
+}
+
+/* Container for all project write up - dashed dark-blue border */
+ .bcontainerwriteup {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: center;
+  gap: 30px 30px;
+  margin-top: 40px;
+  margin-bottom: -15px;
+  border-style: dashed;
+  border-color: #0037ff;
+  padding: 30px;
+  border-radius: 25px;
+}
+
+/* For all charts, using a flex grow border so the viewer can focus attention on each individual chart in turn */
+.chart{
+    background-color: white;
+    border-style: solid;
+    border-color: white;
+    border-width: 4px;
+    border-radius: 25px;
+    text-align: center;
+    padding: 20px;
+    transition: border-radius 500ms, flex-grow 1000ms;
+    width: 45%;
+    min-width: 350px;
+}
+
+/* Full container width charts, looks better for linear regressions */
+#firstChart, #sixteenthChart, #seventeenthChart, #eighteenthChart, #nineteenthChart, #chart1, #chart2, #chart5{
+  background-color: white;
+  border-style: solid;
+  border-color: white;
+  border-width: 4px;
+  border-radius: 25px;
+  text-align: center;
+  padding: 20px;
+  transition: padding 500ms, border-radius 500ms;
+  width: 100%;
+  min-width: 300px;
+}
+
+/* Same as above... */
+.chart:hover, #firstChart:hover, #sixteenthChart:hover, #seventeenthChart:hover, #eighteenthChart:hover, #nineteenthChart:hover, #chart1:hover, #chart2:hover, #chart5:hover {
+  border-color: rgb(104, 5, 242);
+  border-radius: 5px;
+  flex-grow: 1;
+}
+
+/* --------------------------------------- END BODY CONTENT --------------------------------------*/
+
+footer {
+    height: 100px;
+}
+
+/* --------------------------------------- EXTRA SAUCE --------------------------------------*/
+/* Multi-button on navigation bar. Inspired from freefrontend and codepen.io/hexagoncircle/pen/wvBmvOG */
+:root {
+    --border-size: 0.125rem;
+    --duration: 250ms;
+    --ease: cubic-bezier(0.215, 0.61, 0.355, 1);
+    --font-family: monospace;
+    --color-primary: white;
+    --color-secondary: black;
+    --color-tertiary: dodgerblue;
+    --shadow: rgba(0, 0, 0, 0.1);
+    --space: 1rem;
+  }
+  * {
+    box-sizing: border-box;
+  }
+  .multi-button {
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+  } 
+  .multi-button button {
+    flex-grow: 1;
+    cursor: pointer;
+    position: relative;
+    padding:
+      calc(var(--space) / 1.125)
+      var(--space)
+      var(--space);
+    border: var(--border-size) solid black;
+    color: var(--color-secondary);
+    background-color: var(--color-primary);
+    font-size: 1.5rem;
+    font-family: var(--font-family);
+    text-transform: uppercase;
+    text-shadow: var(--shadow) 3px 3px;
+    transition: flex-grow var(--duration) var(--ease);
+  }
+  .multi-button button + button {
+    border-left: var(--border-size) solid black;
+    margin-left: calc(var(--border-size) * -1);
+  }
+  .multi-button button:hover,
+  .multi-button button:focus {
+    flex-grow: 2;
+    color: white;
+    outline: none;
+    text-shadow: none;
+    background-color: var(--color-secondary);
+  }
+  .multi-button button:focus {
+    outline: var(--border-size) dashed var(--color-primary);
+    outline-offset: calc(var(--border-size) * -3);
+  }
+  .multi-button:hover button:focus:not(:hover) {
+    flex-grow: 1;
+    color: var(--color-secondary);
+    background-color: var(--color-primary);
+    outline-color: var(--color-tertiary);
+  }
+  .multi-button button:active {
+    transform: translateY(var(--border-size));
+  }
+
+/* Keyframe code for project title to pulsate different colours, from rapidcharts.io and Richard Davies*/
+@keyframes border-pulsate {
+  0%   { border-color: #ff0000}
+  10%  { border-color: #ffa500}
+  20%  { border-color: #ffff00}
+  30%  { border-color: #ff0000}
+  40%  { border-color: #008000}
+  50%  { border-color: #0000ff}
+  60%  { border-color: #4b0082}
+  70%  { border-color: #ee82ee}
+  80%  { border-color: #33FFDC}
+  90%  { border-color: #FFCC33}
+}
+
+/* Code to make my website 'mobile-first' - removes borders as looks very clunky on mobile otherwise and ensures all charts, writing and buttons fit on the screen */
+@media only screen and (max-width: 450px) {
+  body {
+    max-width: 98%;
+  }
+  .bcontainer {
+    border-style: none;
+    padding: 1px;
+    gap: 10px 10px;
+  }
+  .bcontainerwriteup {
+    border-style: none;
+    padding: 1px;
+    gap: 10px 10px;
+  }
+  .multi-button button {
+    font-size: 1rem;
+  }
+  .chart {
+    min-width: 350px;
+    padding: 10px
+  }
+  .chart:hover {
+    border-color: rgb(104, 5, 242);
+  }
+}
